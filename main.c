@@ -23,12 +23,14 @@ int main(void)
         printf("argv[%d]: %s\n", i, argv[i]);
     }
 
-    free(args);
-    free(s);
 
     execvp(argv[0], argv);
-
+    
     puts("You shouldn't see this!");
+    
+    free(args);
+    free(s);
+    
 }
 
 char ** parse_args( char * line )
